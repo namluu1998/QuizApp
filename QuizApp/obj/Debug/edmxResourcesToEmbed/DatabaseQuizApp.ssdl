@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="quizappModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="admin_athu">
+    <Key>
+      <PropertyRef Name="ad_id" />
+    </Key>
+    <Property Name="ad_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ad_user" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="ad_password" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="exams">
+    <Key>
+      <PropertyRef Name="ex_id" />
+    </Key>
+    <Property Name="ex_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="exam_name" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="questions">
+    <Key>
+      <PropertyRef Name="q_id" />
+    </Key>
+    <Property Name="q_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="q_title" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="q_opa" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="q_opb" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="q_opc" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="q_opd" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="q_opcorrect" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="q_addeddate" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="q_fk_ad" Type="int" />
+    <Property Name="q_fk_ex" Type="int" />
+  </EntityType>
+  <EntityType Name="student_record">
+    <Key>
+      <PropertyRef Name="std_id" />
+    </Key>
+    <Property Name="std_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="std_name" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="std_password" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="std_ad_id" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK__questions__q_fk___36B12243">
+    <End Role="admin_athu" Type="Self.admin_athu" Multiplicity="0..1" />
+    <End Role="questions" Type="Self.questions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="admin_athu">
+        <PropertyRef Name="ad_id" />
+      </Principal>
+      <Dependent Role="questions">
+        <PropertyRef Name="q_fk_ad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__questions__q_fk___37A5467C">
+    <End Role="exams" Type="Self.exams" Multiplicity="0..1" />
+    <End Role="questions" Type="Self.questions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="exams">
+        <PropertyRef Name="ex_id" />
+      </Principal>
+      <Dependent Role="questions">
+        <PropertyRef Name="q_fk_ex" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__student_r__std_a__267ABA7A">
+    <End Role="admin_athu" Type="Self.admin_athu" Multiplicity="0..1" />
+    <End Role="student_record" Type="Self.student_record" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="admin_athu">
+        <PropertyRef Name="ad_id" />
+      </Principal>
+      <Dependent Role="student_record">
+        <PropertyRef Name="std_ad_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="quizappModelStoreContainer">
+    <EntitySet Name="admin_athu" EntityType="Self.admin_athu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="exams" EntityType="Self.exams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="questions" EntityType="Self.questions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="student_record" EntityType="Self.student_record" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__questions__q_fk___36B12243" Association="Self.FK__questions__q_fk___36B12243">
+      <End Role="admin_athu" EntitySet="admin_athu" />
+      <End Role="questions" EntitySet="questions" />
+    </AssociationSet>
+    <AssociationSet Name="FK__questions__q_fk___37A5467C" Association="Self.FK__questions__q_fk___37A5467C">
+      <End Role="exams" EntitySet="exams" />
+      <End Role="questions" EntitySet="questions" />
+    </AssociationSet>
+    <AssociationSet Name="FK__student_r__std_a__267ABA7A" Association="Self.FK__student_r__std_a__267ABA7A">
+      <End Role="admin_athu" EntitySet="admin_athu" />
+      <End Role="student_record" EntitySet="student_record" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
