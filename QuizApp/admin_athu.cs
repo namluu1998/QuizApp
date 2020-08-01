@@ -18,16 +18,14 @@ namespace QuizApp
         public admin_athu()
         {
             this.questions = new HashSet<question>();
-            this.student_record = new HashSet<student_record>();
         }
     
         public int ad_id { get; set; }
         public string ad_user { get; set; }
         public string ad_password { get; set; }
+        public bool isAd { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<question> questions { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<student_record> student_record { get; set; }
     }
 }

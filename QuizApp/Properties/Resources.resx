@@ -118,38 +118,29 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="chevron_down" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chevron_down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="bar-chart" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bar-chart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="shopping-cart (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\shopping-cart (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Order" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Order.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="shopping-list" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\shopping-list.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="AddStudents" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddStudents.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Exit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Exit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\settings.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Next" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Next.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Back" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Backspace" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Backspace.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="upload" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\upload.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="OptionA1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\OptionA1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="OptionA" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\OptionA.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="AddStudents" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AddStudents.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="mail1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mail1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="cross" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cross.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,8 +148,8 @@
   <data name="unlock1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\unlock1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="quizMove" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\quizMove.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="error" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\error.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="alarm (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\alarm (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,29 +157,38 @@
   <data name="cross-out (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cross-out (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="PictureOption" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PictureOption.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="success" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\success.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="AddExams" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AddExams.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="AdminIconClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AdminIconClick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="UserGroupIconClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\UserGroupIconClick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Admin-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Admin-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="user2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\user2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="triangle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\triangle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="User-Group-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\User-Group-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="AdminIconClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AdminIconClick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="value" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\value.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="info" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\info.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="warning" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warning.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="addImages" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\addImages.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="unlock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\unlock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="user2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ResultQs" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ResultQs.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="question" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\question.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -196,8 +196,11 @@
   <data name="user1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="OptionC" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\OptionC.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="opened_folder" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\opened_folder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ImageAdmin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ImageAdmin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="unlock2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\unlock2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -205,31 +208,16 @@
   <data name="close" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="quiz" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\quiz.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="OptionB" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\OptionB.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="AddStudentsMove" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AddStudentsMove.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="value (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\value (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="unlock" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\unlock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Result" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Result.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="mail11" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\mail11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="mail1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\mail1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="OptionD" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\OptionD.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ImageAdmin" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ImageAdmin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="businesswoman" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\businesswoman.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

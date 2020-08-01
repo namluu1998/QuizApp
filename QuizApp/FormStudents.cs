@@ -13,10 +13,11 @@ namespace QuizApp
 {
     public partial class FormStudents : Form
     {
+        List<int> examsCode = new List<int>();
         public static int numQuestion;
         public static string examName;
         public static bool isTimes = false;
-        public static List<int> time = new List<int>() { 0, 0 };
+        //public static long time;
         ReturnClass ReturnClass = new ReturnClass();
         public FormStudents()
         {
@@ -26,14 +27,32 @@ namespace QuizApp
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+            Application.Exit();
         }
 
         private void FormChooseExams_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'quizappDataSet.exams' table. You can move, or remove it, as needed.
-            this.examsTableAdapter.Fill(this.quizappDataSet.exams);
-            //cbxSelectExams.DataBindings
+            string query = "select * from exams ";
+            //Load eclipse Border in Form
+            this.Eclipse.ApplyElipse(this, 20);
+            this.Eclipse.ApplyElipse(bunifuGradientPanel1, 15);
+            //Load Component in Combo box Name Exams
+            using(SqlDataReader reader = ReturnClass.readerReturn(query))
+            {
+                List<string> exName = new List<string>();
+                while (reader.Read())
+                {
+                    examsCode.Add(reader.GetInt32(0));
+                    exName.Add(reader.GetString(1));
+                }
+                cbxNameExams.Items = exName.ToArray();
+            }
+            this.KeyPreview = true;
 
+            /* SetCombo box Selected */
+            cbxNameExams.selectedIndex = 0;
+            cbxSelectNumExams.SelectedIndex = 0;
+            cbxTimes.SelectedIndex = 0;
         }
         public int stringToInt(string str)
         {
@@ -45,67 +64,33 @@ namespace QuizApp
                 return 0;
             }
         }
-        private void btnStart_Click(object sender, EventArgs e)
-        {
-
-            numQuestion = stringToInt(cbxSelectNumExams.Text);
-            string sqlCommand = "select count(q_id)" +
-                " from questions inner join exams on exams.ex_id = questions.q_fk_ex" +
-                " where exams.exam_name = '"+ cbxChooseExam.Text+"'";
-            if (numQuestion==0)
-            {
-                MessageBox.Show("Invalid input Number question ");
-                return;
-            }
-            else if (stringToInt(ReturnClass.scalarReturn(sqlCommand)) < numQuestion)
-            {
-                MessageBox.Show("The number of questions must be smaller "+ stringToInt(ReturnClass.scalarReturn(sqlCommand)));
-                return;
-            }
-            else
-            {
-
-                //Hide Form
-                this.Hide();
-                //set isTime
-                int seconds = stringToInt(cbxTimes.Text);
-                if (seconds == 0)
-                    isTimes = false;
-                else
-                {
-                    seconds *= numQuestion;
-                    time[0] = seconds / 60;
-                    time[1] = seconds % 60;
-                    isTimes = true;
-                }
-                examName = cbxChooseExam.Text;
-                FormBeginner formBeginner = new FormBeginner();
-                formBeginner.ShowDialog();
-                this.Show();
-            }
-            //if()
-        }
-        private void btnSetting_Click(object sender, EventArgs e)
-        {
-            SqlConnection sqlConnection = new SqlConnection(ReturnClass.connstring);
-            sqlConnection.Open();
-            string msg = "select q_id,q_title " +
-            "from questions inner join exams on exams.ex_id = questions.q_fk_ex " +
-            "where exams.exam_name = 'java' and q_id = 2";
-            SqlDataReader sqlDataReader;
-            SqlCommand sqlCommand = new SqlCommand(msg,sqlConnection);
-            sqlDataReader = sqlCommand.ExecuteReader();
-            while(sqlDataReader.Read())
-            {
-                MessageBox.Show(sqlDataReader.GetValue(0).ToString() + "\n" + sqlDataReader.GetValue(1).ToString());
-            }
-
-
-        }
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+
+        private void btnStart_Click_1(object sender, EventArgs e)
+        {
+            if (cbxNameExams.selectedIndex == -1) { MessBox.Warning("Not selected Name Exams !! Please Select ");return; };
+            if (stringToInt(cbxSelectNumExams.Text) <= 0) { MessBox.Warning("Invalid Number Question !! ");return; }
+            if (stringToInt(cbxTimes.Text) <= 0 && !cbxTimes.Text.Equals("None")) { MessBox.Warning("Invalid Times/Number Question !! "); return; }
+            if(!QA.getInstance().setQuestions(stringToInt(cbxSelectNumExams.Text), examsCode[cbxNameExams.selectedIndex], stringToInt(cbxTimes.Text)))
+                return;
+
+            //Hide and show form beginner
+            this.Hide();
+            using(var form = new StartForm())
+            {
+                form.ShowDialog();
+            }
+            this.Show();
+        }
+
+        private void FormStudents_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Alt == true && e.KeyCode == Keys.F4) btnExit_Click(null, null);
         }
     }
 }

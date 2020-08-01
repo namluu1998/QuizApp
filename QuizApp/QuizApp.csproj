@@ -35,9 +35,19 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>question.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu_UI_v1.52">
       <HintPath>..\..\Bunifu_UI_v1.52.dll</HintPath>
+    </Reference>
+    <Reference Include="ChatLibrary">
+      <HintPath>C:\Users\Wolf\Downloads\ChatServer\ChatServer\ChatLibrary\bin\Debug\ChatLibrary.dll</HintPath>
     </Reference>
     <Reference Include="ComponentFactory.Krypton.Toolkit">
       <HintPath>..\..\Krypton-master\Krypton-master\Bin\ComponentFactory.Krypton.Toolkit.dll</HintPath>
@@ -48,6 +58,10 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Guna.UI2">
+      <HintPath>C:\Users\Wolf\Documents\Guna\Guna.UI2_WinFroms\.net 4.0\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -57,6 +71,7 @@
     <Reference Include="System.Management" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -68,56 +83,96 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddExam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AddExam.Designer.cs">
+      <DependentUpon>AddExam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddPanelQs.cs" />
+    <Compile Include="AddQuestions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AddQuestions.Designer.cs">
+      <DependentUpon>AddQuestions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddUsers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AddUsers.Designer.cs">
+      <DependentUpon>AddUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminForm.Designer.cs">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="admin_athu.cs">
-      <DependentUpon>DatabaseQuizApp.tt</DependentUpon>
+      <DependentUpon>Database1.tt</DependentUpon>
     </Compile>
-    <Compile Include="DatabaseQuizApp.Context.cs">
+    <Compile Include="AlertForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlertForm.Designer.cs">
+      <DependentUpon>AlertForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChangeExam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ChangeExam.Designer.cs">
+      <DependentUpon>ChangeExam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChangeUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ChangeUser.Designer.cs">
+      <DependentUpon>ChangeUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Database1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DatabaseQuizApp.Context.tt</DependentUpon>
+      <DependentUpon>Database1.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="DatabaseQuizApp.cs">
+    <Compile Include="Database1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DatabaseQuizApp.tt</DependentUpon>
+      <DependentUpon>Database1.tt</DependentUpon>
     </Compile>
-    <Compile Include="DatabaseQuizApp.Designer.cs">
+    <Compile Include="Database1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DatabaseQuizApp.edmx</DependentUpon>
+      <DependentUpon>Database1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DataReader.cs" />
+    <Compile Include="DisplayOptionResult.cs" />
+    <Compile Include="DisplayQuestion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DisplayQuestion.Designer.cs">
+      <DependentUpon>DisplayQuestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DisplayResultStartForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DisplayResultStartForm.Designer.cs">
+      <DependentUpon>DisplayResultStartForm.cs</DependentUpon>
     </Compile>
     <Compile Include="exam.cs">
-      <DependentUpon>DatabaseQuizApp.tt</DependentUpon>
+      <DependentUpon>Database1.tt</DependentUpon>
     </Compile>
-    <Compile Include="FormAddExams.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormAddExams.Designer.cs">
-      <DependentUpon>FormAddExams.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormAdmin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormAdmin.Designer.cs">
-      <DependentUpon>FormAdmin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormBeginner.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormBeginner.Designer.cs">
-      <DependentUpon>FormBeginner.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Exams.cs" />
     <Compile Include="FormStudents.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormStudents.Designer.cs">
       <DependentUpon>FormStudents.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormDeleteQuestion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormDeleteQuestion.Designer.cs">
-      <DependentUpon>FormDeleteQuestion.cs</DependentUpon>
     </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
@@ -125,96 +180,130 @@
     <Compile Include="FormLogin.designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormChooseItems.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormChooseItems.Designer.cs">
-      <DependentUpon>FormChooseItems.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormMain.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormMain.Designer.cs">
-      <DependentUpon>FormMain.cs</DependentUpon>
-    </Compile>
-    <Compile Include="InsertClass.cs" />
-    <Compile Include="MenuAdmin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MenuAdmin.Designer.cs">
-      <DependentUpon>MenuAdmin.cs</DependentUpon>
-    </Compile>
+    <Compile Include="HandleGrView.cs" />
+    <Compile Include="MessBox.cs" />
+    <Compile Include="Options.cs" />
+    <Compile Include="PanelOptionStartForm.cs" />
+    <Compile Include="PnContentQs.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Question.cs">
-      <DependentUpon>DatabaseQuizApp.tt</DependentUpon>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QA.cs" />
+    <Compile Include="question.cs">
+      <DependentUpon>Database1.tt</DependentUpon>
     </Compile>
     <Compile Include="Questions.cs" />
-    <Compile Include="quizappDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>quizappDataSet.xsd</DependentUpon>
+    <Compile Include="ResultQs.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="quizappDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>quizappDataSet1.xsd</DependentUpon>
+    <Compile Include="ResultQs.Designer.cs">
+      <DependentUpon>ResultQs.cs</DependentUpon>
     </Compile>
-    <Compile Include="quizappDataSet2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>quizappDataSet2.xsd</DependentUpon>
-    </Compile>
+    <Compile Include="RgEx.cs" />
+    <Compile Include="ResultDataQs.cs" />
     <Compile Include="ReturnClass.cs" />
-    <Compile Include="student_record.cs">
-      <DependentUpon>DatabaseQuizApp.tt</DependentUpon>
+    <Compile Include="StartForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StartForm.Designer.cs">
+      <DependentUpon>StartForm.cs</DependentUpon>
     </Compile>
     <Compile Include="sysdiagram.cs">
-      <DependentUpon>DatabaseQuizApp.tt</DependentUpon>
+      <DependentUpon>Database1.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FormAddExams.resx">
-      <DependentUpon>FormAddExams.cs</DependentUpon>
+    <Compile Include="TestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestForm.Designer.cs">
+      <DependentUpon>TestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WaitAdminForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WaitAdminForm.Designer.cs">
+      <DependentUpon>WaitAdminForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZoomImg.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ZoomImg.Designer.cs">
+      <DependentUpon>ZoomImg.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddExam.resx">
+      <DependentUpon>AddExam.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormAdmin.resx">
-      <DependentUpon>FormAdmin.cs</DependentUpon>
+    <EmbeddedResource Include="AddQuestions.resx">
+      <DependentUpon>AddQuestions.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormBeginner.resx">
-      <DependentUpon>FormBeginner.cs</DependentUpon>
+    <EmbeddedResource Include="AddUsers.resx">
+      <DependentUpon>AddUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminForm.resx">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AlertForm.resx">
+      <DependentUpon>AlertForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangeExam.resx">
+      <DependentUpon>ChangeExam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangeUser.resx">
+      <DependentUpon>ChangeUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisplayQuestion.resx">
+      <DependentUpon>DisplayQuestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisplayResultStartForm.resx">
+      <DependentUpon>DisplayResultStartForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormStudents.resx">
       <DependentUpon>FormStudents.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormDeleteQuestion.resx">
-      <DependentUpon>FormDeleteQuestion.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormChooseItems.resx">
-      <DependentUpon>FormChooseItems.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormMain.resx">
-      <DependentUpon>FormMain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MenuAdmin.resx">
-      <DependentUpon>MenuAdmin.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <EntityDeploy Include="DatabaseQuizApp.edmx">
+    <EmbeddedResource Include="ResultQs.resx">
+      <DependentUpon>ResultQs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StartForm.resx">
+      <DependentUpon>StartForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestForm.resx">
+      <DependentUpon>TestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl1.resx">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WaitAdminForm.resx">
+      <DependentUpon>WaitAdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZoomImg.resx">
+      <DependentUpon>ZoomImg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="Database1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DatabaseQuizApp.Designer.cs</LastGenOutput>
+      <LastGenOutput>Database1.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="DatabaseQuizApp.edmx.diagram">
-      <DependentUpon>DatabaseQuizApp.edmx</DependentUpon>
+    <None Include="Database1.edmx.diagram">
+      <DependentUpon>Database1.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -231,49 +320,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="quizappDataSet.xsc">
-      <DependentUpon>quizappDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="quizappDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>quizappDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="quizappDataSet.xss">
-      <DependentUpon>quizappDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="quizappDataSet1.xsc">
-      <DependentUpon>quizappDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="quizappDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>quizappDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="quizappDataSet1.xss">
-      <DependentUpon>quizappDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="quizappDataSet2.xsc">
-      <DependentUpon>quizappDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="quizappDataSet2.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>quizappDataSet2.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="quizappDataSet2.xss">
-      <DependentUpon>quizappDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="Resources\Admin-icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\User-Group-icon.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\AdminIconClick.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\UserGroupIconClick.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\alarm %281%29.png" />
@@ -300,18 +347,6 @@
     <None Include="Resources\mail11.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Order.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\settings.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\shopping-cart %281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\shopping-list.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\unlock.png" />
   </ItemGroup>
   <ItemGroup>
@@ -321,19 +356,10 @@
     <None Include="Resources\unlock2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\upload.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\user1.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\user2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\value %281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\value.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AddStudents.png" />
@@ -342,25 +368,7 @@
     <None Include="Resources\AddStudentsMove.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\quiz.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\quizMove.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Backspace.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\OptionA1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\OptionB.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\OptionC.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\OptionD.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AddExams.png" />
@@ -375,19 +383,34 @@
     <None Include="Resources\ImageAdmin.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DatabaseQuizApp.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DatabaseQuizApp.edmx</DependentUpon>
-      <LastGenOutput>DatabaseQuizApp.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="DatabaseQuizApp.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DatabaseQuizApp.edmx</DependentUpon>
-      <LastGenOutput>DatabaseQuizApp.cs</LastGenOutput>
-    </Content>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Content Include="Database1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Database1.edmx</DependentUpon>
+      <LastGenOutput>Database1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Database1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Database1.edmx</DependentUpon>
+      <LastGenOutput>Database1.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\warning.png" />
+    <None Include="Resources\success.png" />
+    <None Include="Resources\info.png" />
+    <None Include="Resources\error.png" />
+    <None Include="Resources\businesswoman.png" />
+    <Content Include="question.ico" />
+    <Content Include="Resources\iconsAlert\success.png" />
+    <None Include="Resources\Next.png" />
+    <None Include="Resources\Back.png" />
+    <None Include="Resources\Result.png" />
+    <None Include="Resources\ResultQs.png" />
+    <None Include="Resources\chevron_down.png" />
+    <None Include="Resources\PictureOption.png" />
+    <None Include="Resources\addImages.png" />
+    <None Include="Resources\opened_folder.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

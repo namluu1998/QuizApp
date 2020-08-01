@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="quizappModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="admin_athu">
+    <Key>
+      <PropertyRef Name="ad_user" />
+    </Key>
+    <Property Name="ad_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ad_user" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ad_password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="isAd" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="exam">
+    <Key>
+      <PropertyRef Name="ex_id" />
+    </Key>
+    <Property Name="ex_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="exam_name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="questions" Relationship="Self.FK__questions__q_fk___37A5467C" FromRole="exams" ToRole="questions" />
+  </EntityType>
+  <EntityType Name="question">
+    <Key>
+      <PropertyRef Name="q_id" />
+    </Key>
+    <Property Name="q_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="q_title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="q_opa" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="q_opb" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="q_opc" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="q_opd" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="q_opcorrect" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="q_addeddate" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="q_fk_ad" Type="Int32" />
+    <Property Name="q_fk_ex" Type="Int32" />
+    <NavigationProperty Name="exam" Relationship="Self.FK__questions__q_fk___37A5467C" FromRole="questions" ToRole="exams" />
+  </EntityType>
+  <EntityType Name="student_record">
+    <Key>
+      <PropertyRef Name="std_id" />
+    </Key>
+    <Property Name="std_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="std_name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="std_password" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="std_ad_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK__questions__q_fk___37A5467C">
+    <End Role="exams" Type="Self.exam" Multiplicity="0..1" />
+    <End Role="questions" Type="Self.question" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="exams">
+        <PropertyRef Name="ex_id" />
+      </Principal>
+      <Dependent Role="questions">
+        <PropertyRef Name="q_fk_ex" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="quizappEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="admin_athu" EntityType="Self.admin_athu" />
+    <EntitySet Name="exams" EntityType="Self.exam" />
+    <EntitySet Name="questions" EntityType="Self.question" />
+    <EntitySet Name="student_record" EntityType="Self.student_record" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <AssociationSet Name="FK__questions__q_fk___37A5467C" Association="Self.FK__questions__q_fk___37A5467C">
+      <End Role="exams" EntitySet="exams" />
+      <End Role="questions" EntitySet="questions" />
+    </AssociationSet>
+    <FunctionImport Name="insertQuestion">
+      <Parameter Name="q_title" Mode="In" Type="String" />
+      <Parameter Name="q_opa" Mode="In" Type="String" />
+      <Parameter Name="q_opb" Mode="In" Type="String" />
+      <Parameter Name="q_opc" Mode="In" Type="String" />
+      <Parameter Name="q_opd" Mode="In" Type="String" />
+      <Parameter Name="q_opcorrect" Mode="In" Type="String" />
+      <Parameter Name="q_addeddate" Mode="In" Type="String" />
+      <Parameter Name="q_fk_ad" Mode="In" Type="Int32" />
+      <Parameter Name="q_fk_ex" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(quizappModel1.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(quizappModel1.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+</Schema>

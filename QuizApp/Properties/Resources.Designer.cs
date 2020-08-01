@@ -73,6 +73,16 @@ namespace QuizApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap addImages {
+            get {
+                object obj = ResourceManager.GetObject("addImages", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap AddStudents {
             get {
                 object obj = ResourceManager.GetObject("AddStudents", resourceCulture);
@@ -86,16 +96,6 @@ namespace QuizApp.Properties {
         internal static System.Drawing.Bitmap AddStudentsMove {
             get {
                 object obj = ResourceManager.GetObject("AddStudentsMove", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Admin_icon {
-            get {
-                object obj = ResourceManager.GetObject("Admin-icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,6 +123,16 @@ namespace QuizApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Back {
+            get {
+                object obj = ResourceManager.GetObject("Back", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Backspace {
             get {
                 object obj = ResourceManager.GetObject("Backspace", resourceCulture);
@@ -136,6 +146,26 @@ namespace QuizApp.Properties {
         internal static System.Drawing.Bitmap bar_chart {
             get {
                 object obj = ResourceManager.GetObject("bar-chart", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap businesswoman {
+            get {
+                object obj = ResourceManager.GetObject("businesswoman", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap chevron_down {
+            get {
+                object obj = ResourceManager.GetObject("chevron_down", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,6 +203,16 @@ namespace QuizApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap error {
+            get {
+                object obj = ResourceManager.GetObject("error", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Exit {
             get {
                 object obj = ResourceManager.GetObject("Exit", resourceCulture);
@@ -186,6 +226,16 @@ namespace QuizApp.Properties {
         internal static System.Drawing.Bitmap ImageAdmin {
             get {
                 object obj = ResourceManager.GetObject("ImageAdmin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap info {
+            get {
+                object obj = ResourceManager.GetObject("info", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -213,9 +263,9 @@ namespace QuizApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap OptionA {
+        internal static System.Drawing.Bitmap Next {
             get {
-                object obj = ResourceManager.GetObject("OptionA", resourceCulture);
+                object obj = ResourceManager.GetObject("Next", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -223,9 +273,9 @@ namespace QuizApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap OptionA1 {
+        internal static System.Drawing.Bitmap opened_folder {
             get {
-                object obj = ResourceManager.GetObject("OptionA1", resourceCulture);
+                object obj = ResourceManager.GetObject("opened_folder", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -233,39 +283,9 @@ namespace QuizApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap OptionB {
+        internal static System.Drawing.Bitmap PictureOption {
             get {
-                object obj = ResourceManager.GetObject("OptionB", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap OptionC {
-            get {
-                object obj = ResourceManager.GetObject("OptionC", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap OptionD {
-            get {
-                object obj = ResourceManager.GetObject("OptionD", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Order {
-            get {
-                object obj = ResourceManager.GetObject("Order", resourceCulture);
+                object obj = ResourceManager.GetObject("PictureOption", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -283,9 +303,9 @@ namespace QuizApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap quiz {
+        internal static System.Drawing.Bitmap Result {
             get {
-                object obj = ResourceManager.GetObject("quiz", resourceCulture);
+                object obj = ResourceManager.GetObject("Result", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -293,9 +313,9 @@ namespace QuizApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap quizMove {
+        internal static System.Drawing.Bitmap ResultQs {
             get {
-                object obj = ResourceManager.GetObject("quizMove", resourceCulture);
+                object obj = ResourceManager.GetObject("ResultQs", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -303,29 +323,9 @@ namespace QuizApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap settings {
+        internal static System.Drawing.Bitmap success {
             get {
-                object obj = ResourceManager.GetObject("settings", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap shopping_cart__1_ {
-            get {
-                object obj = ResourceManager.GetObject("shopping-cart (1)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap shopping_list {
-            get {
-                object obj = ResourceManager.GetObject("shopping-list", resourceCulture);
+                object obj = ResourceManager.GetObject("success", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -373,26 +373,6 @@ namespace QuizApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap upload {
-            get {
-                object obj = ResourceManager.GetObject("upload", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap User_Group_icon {
-            get {
-                object obj = ResourceManager.GetObject("User-Group-icon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap user1 {
             get {
                 object obj = ResourceManager.GetObject("user1", resourceCulture);
@@ -413,29 +393,9 @@ namespace QuizApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap UserGroupIconClick {
+        internal static System.Drawing.Bitmap warning {
             get {
-                object obj = ResourceManager.GetObject("UserGroupIconClick", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap value {
-            get {
-                object obj = ResourceManager.GetObject("value", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap value__1_ {
-            get {
-                object obj = ResourceManager.GetObject("value (1)", resourceCulture);
+                object obj = ResourceManager.GetObject("warning", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

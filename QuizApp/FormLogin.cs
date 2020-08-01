@@ -8,12 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Data.SqlClient;
+using System.IO;
 
 namespace QuizApp
 {
     public partial class FormLogin : Form
     {
         public static int fk_ad;
+        public static string username="";
+        AdminForm formAdmin;
+        FormStudents formStudents;
 
         public FormLogin()
         {
@@ -24,21 +29,11 @@ namespace QuizApp
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
 
-        private void ptcExit_MouseLeave(object sender, EventArgs e)
-        {
-            ptcExit.BackgroundImage = Properties.Resources.Exit;
-        }
 
         private void ptcExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-        private void ptcExit_MouseHover(object sender, EventArgs e)
-        {
-            this.ptcExit.BackgroundImage = Properties.Resources.cross;
-        }
-
         private void txtUsername_Enter(object sender, EventArgs e)
         {
             if (txtUsername.Text == "Username") txtUsername.Text = "";
@@ -58,6 +53,7 @@ namespace QuizApp
         private void txtPassword_Enter(object sender, EventArgs e)
         {
             if (txtPassword.Text == "Password") txtPassword.Clear();
+            txtPassword.UseSystemPasswordChar = true;
             ptcPassword.BackgroundImage = Properties.Resources.unlock;
             txtPassword.ForeColor = Color.FromArgb(78, 184, 206);
             panel2.ForeColor = Color.FromArgb(78, 184, 206);
@@ -65,28 +61,13 @@ namespace QuizApp
 
         private void txtPassword_Leave(object sender, EventArgs e)
         {
-            if (txtPassword.Text == "") txtPassword.Text = "Password";
+            if (txtPassword.Text == "") { txtPassword.Text = "Password"; txtPassword.UseSystemPasswordChar = false; }
+            else txtPassword.UseSystemPasswordChar = true;
             ptcPassword.BackgroundImage = Properties.Resources.unlock1;
             txtPassword.ForeColor = Color.WhiteSmoke;
             panel2.ForeColor = Color.WhiteSmoke;
         }
 
-        private void txtGmail_Enter(object sender, EventArgs e)
-        {
-            if (txtGmail.Text == "Username") txtGmail.Clear();
-            ptcGmail.BackgroundImage = Properties.Resources.mail11;
-            txtGmail.ForeColor = Color.FromArgb(78, 184, 206);
-            panel3.ForeColor = Color.FromArgb(78, 184, 206);
-        }
-
-        private void txtGmail_Leave(object sender, EventArgs e)
-        {
-
-            if (txtGmail.Text == "") txtGmail.Text = "Username";
-            ptcGmail.BackgroundImage = Properties.Resources.mail1;
-            txtGmail.ForeColor = Color.WhiteSmoke;
-            panel3.ForeColor = Color.WhiteSmoke;
-        }
 
         private void Form1_MouseDown(object sender, MouseEventArgs e)
         {
@@ -96,51 +77,74 @@ namespace QuizApp
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            string user = txtUsername.Text;
+            string pass = txtPassword.Text;
+            if (user.Equals("Username") || pass.Equals("Password")) { MessBox.MessError("Username or Password is Empty !!"); return; }
+            if (!RgEx.isAlphanumericNotSpace(user,"Username"))
+                return;
+            if (!RgEx.isAlphanumericNotSpace(pass, "Password"))
+                return;
+            //MessBox.MessInf(isAd);
+            string query = string.Format("select isAd from admin_athu where ad_user='{0}' and ad_password='{1}'", user, pass);
+            string isAd = ReturnClass.scalarReturn(query);
+            
+            //Check invalid User or password
+            if (isAd.Equals("")) { MessBox.MessError("Invalid Input User or Password"); return; }
+            //Hide old form login and show form Admin or Students
             try
             {
-                string user = txtUsername.Text;
-                string pass = txtPassword.Text;
-                string userdb;
-                ReturnClass returnClass = new ReturnClass();
-                userdb = returnClass.scalarReturn("select count(ad_id) from admin_athu where ad_user='" + user + "'");
-                if (userdb.Equals("0"))
+                this.Hide();
+                if (isAd.Equals("True"))
                 {
-                    MessageBox.Show("Invalid Username");
+                    username = user;
+                    formAdmin.ShowDialog();
                 }
-                else
-                {
-                    //passworddb = returnClass.scalarReturn("select count(ad_id) from admin_athu where ad_user='" + user + "' and ad_password='" + pass + "'");
-                    string passw = returnClass.scalarReturn("select ad_user from admin_athu where ad_password = '" + txtPassword.Text+"'");
-                    if(user.Equals(passw))
-                    {
-                        string fk_ad_string = returnClass.scalarReturn("select ad_id from admin_athu where ad_user='" + txtUsername.Text + "'");
-                        fk_ad = int.Parse(fk_ad_string);
-                        txtUsername.Text = "Username";
-                        txtPassword.Text= "Password";
-                        MenuAdmin menuAdmin = new MenuAdmin();
-                        menuAdmin.Show();
-                        
-                    }
-                    else
-                    {
-                        MessageBox.Show("Invalid Password");
-                    }
-                }
-            }
-            catch (Exception)
+                else formStudents.ShowDialog();
+                this.Show();
+            }catch
             {
 
             }
-
         }
 
-        private void FormLogin_KeyPress(object sender, KeyPressEventArgs e)
+
+        private void FormLogin_MouseUp(object sender, MouseEventArgs e)
         {
+            this.Opacity = 1D;
+        }
+
+        private void bunifuImageButton1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
+            //ZoomImg img = new ZoomImg();
+            //img.Dock = DockStyle.Fill;
+            //img.SetBounds(20, 20, 150, 70);
+            //this.Controls.Add(img);
+            //this.Controls.SetChildIndex(img, 0);
+            //MessageBox.Show();
+            //qs.UpdateQuestion();
+            /*Delete*/
+            /*Insert Option in Question*/
+            //Options op = new Options("int", "12", "0", "1");
+            //op.insertOption();
+            this.KeyPreview = true;
+            formAdmin = new AdminForm();
+            formStudents = new FormStudents();
+        }
 
+        private void FormLogin_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode== Keys.Enter)btnLogin_Click(btnLogin, null);
+        }
+
+        private void timeStart_Tick(object sender, EventArgs e)
+        {
+            if (this.Opacity < 1) this.Opacity += 0.025;
+            else timeStart.Stop();
         }
     }
 }

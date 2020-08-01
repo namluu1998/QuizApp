@@ -22,8 +22,8 @@ namespace QuizApp
         public string q_opd { get; set; }
         public string q_opcorrect { get; set; }
         public string q_addeddate { get; set; }
-        public Nullable<int> q_fk_ad { get; set; }
         public Nullable<int> q_fk_ex { get; set; }
+        public string ad_add { get; set; }
     
         public virtual admin_athu admin_athu { get; set; }
         public virtual exam exam { get; set; }
